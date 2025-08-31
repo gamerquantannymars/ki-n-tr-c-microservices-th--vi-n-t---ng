@@ -32,7 +32,7 @@ services:
       - library-network
 
   mongo:
-    image: mongo
+    image: mongo:latest  # Use the latest MongoDB image
     ports:
       - '27017:27017'  # MongoDB database service
     networks:
