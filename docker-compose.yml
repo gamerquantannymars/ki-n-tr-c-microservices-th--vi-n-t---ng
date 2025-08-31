@@ -6,23 +6,23 @@ services:
     ports:
       - '3001:3000'
     environment:
-      - MONGODB_URI=mongodb://mongo:27017/sach
+      - MONGODB_URI=mongodb://mongo:27017/sach  # Service for managing books
 
   doc_gia:
     build: ./service-doc-gia
     ports:
       - '3002:3000'
     environment:
-      - MONGODB_URI=mongodb://mongo:27017/docgia
+      - MONGODB_URI=mongodb://mongo:27017/docgia  # Service for managing readers
 
   cho_muon:
     build: ./service-cho-muon
     ports:
       - '3003:3000'
     environment:
-      - MONGODB_URI=mongodb://mongo:27017/chomuon
+      - MONGODB_URI=mongodb://mongo:27017/chomuon  # Service for managing loans
 
   mongo:
     image: mongo
     ports:
-      - '27017:27017'
+      - '27017:27017'  # MongoDB database service
