@@ -38,10 +38,10 @@ services:
     networks:
       - library-network
     healthcheck:
-      test: [ 'CMD', 'mongo', '--eval', 'db.adminCommand("ping")' ]
-      interval: 30s
-      timeout: 10s
-      retries: 5
+      test: [ 'CMD', 'mongo', '--eval', 'db.adminCommand("ping")' ]  # Command to check MongoDB health
+      interval: 30s  # Check health every 30 seconds
+      timeout: 10s  # Timeout for health check command
+      retries: 5  # Number of retries before considering the service unhealthy
 
 # Define networks
 networks:
