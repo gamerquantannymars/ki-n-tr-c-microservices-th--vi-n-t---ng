@@ -8,6 +8,8 @@ services:
       - '3001:3000'
     environment:
       - MONGODB_URI=mongodb://mongo:27017/sach  # Service for managing books
+    networks:
+      - library-network
 
   doc_gia:
     build: ./service-doc-gia
@@ -15,6 +17,8 @@ services:
       - '3002:3000'
     environment:
       - MONGODB_URI=mongodb://mongo:27017/docgia  # Service for managing readers
+    networks:
+      - library-network
 
   cho_muon:
     build: ./service-cho-muon
@@ -22,8 +26,16 @@ services:
       - '3003:3000'
     environment:
       - MONGODB_URI=mongodb://mongo:27017/chomuon  # Service for managing loans
+    networks:
+      - library-network
 
   mongo:
     image: mongo
     ports:
       - '27017:27017'  # MongoDB database service
+    networks:
+      - library-network
+
+networks:
+  library-network:
+    driver: bridge
