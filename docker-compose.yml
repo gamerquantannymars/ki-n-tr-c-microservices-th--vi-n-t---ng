@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  sach:
+    build: ./service-sach
+    ports:
+      - '3001:3000'
+    environment:
+      - MONGODB_URI=mongodb://mongo:27017/sach
+
+  doc_gia:
+    build: ./service-doc-gia
+    ports:
+      - '3002:3000'
+    environment:
+      - MONGODB_URI=mongodb://mongo:27017/docgia
+
+  cho_muon:
+    build: ./service-cho-muon
+    ports:
+      - '3003:3000'
+    environment:
+      - MONGODB_URI=mongodb://mongo:27017/chomuon
+
+  mongo:
+    image: mongo
+    ports:
+      - '27017:27017'
