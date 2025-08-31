@@ -1,5 +1,6 @@
 version: '3'
 
+# Docker Compose configuration for library management system
 services:
   sach:
     build: ./service-sach
