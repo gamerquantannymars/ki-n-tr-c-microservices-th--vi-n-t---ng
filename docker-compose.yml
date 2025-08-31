@@ -37,6 +37,11 @@ services:
       - '27017:27017'  # MongoDB database service
     networks:
       - library-network
+    healthcheck:
+      test: [ 'CMD', 'mongo', '--eval', 'db.adminCommand("ping")' ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
 
 # Define networks
 networks:
