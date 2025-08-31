@@ -1,6 +1,8 @@
 version: '3'
 
 # Docker Compose configuration for library management system
+
+# Define services for managing books, readers, and loans
 services:
   sach:
     build: ./service-sach
@@ -36,6 +38,7 @@ services:
     networks:
       - library-network
 
+# Define networks
 networks:
   library-network:
     driver: bridge
