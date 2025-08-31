@@ -44,3 +44,4 @@ networks:
     driver: bridge
 
 # Note: Ensure MongoDB version compatibility with application services
+# Each service requires access to a MongoDB instance for data persistence.
